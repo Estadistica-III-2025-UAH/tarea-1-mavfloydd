@@ -12,7 +12,7 @@ Para realizar la tarea deben incorporar los siguientes elementos en el archivo (
 2.- Tres subtítulos que separarán los dos procedimientos que deben contenerse en la entrega (## 1. Carga de paquetes, ## 2. flujo y ## 3. Descriptivos).
 
 3.- Chunks:
-En el apartado ## 1. Carga de paquetes debes cargar uno de los paquetes más importantes para el curso. El chunk *no se debe ver* en el documento final, pero si en tu .Rmd.
+En el apartado ## 1. Carga de paquetes debes cargar uno de los paquetes más importantes para el curso (tidyverse). El chunk *no se debe ver* en el documento final, pero si en tu .Rmd.
 
 Debes explicar:
 - El nombre del paquete cargado
