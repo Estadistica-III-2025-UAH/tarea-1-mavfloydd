@@ -1,0 +1,76 @@
+---
+title: "Tarea N°1"
+author: "Estudiante: Erick Quezada Carrasco - Profesor: Mauricio Carrasco - Ayudante:
+  Vicente Díaz"
+date: "2025-04-02"
+output: html_document
+---
+
+## 1.- Carga de paquetes. 
+
+```{r setup, include=FALSE}
+library(tidyverse)  # Conjunto de paquetes esenciales para manipulación de datos y visualización.
+library(pacman)     # Facilita la carga de paquetes.
+library(sjPlot)     # Permite la creación de gráficos estadísticos sencillos.
+library(sjmisc)     # Proporciona herramientas útiles para el manejo de datos.
+library(knitr)      # Permite la creación de tablas en documentos RMarkdown.
+
+```
+
+## 2.- Flujo.
+
+En un proyecto en RStudio, la organización de archivos es clave para la reproducibilidad. Se sigue la siguiente estructura:
+
+![](flujo.png)
+
+### Entrada (`input`)
+Almacena las bases de datos en formatos como `.csv`, `.sav`, `.dta` y documentos como `.doc` o `.pdf`.
+
+### R (`R`)
+Guarda los códigos en `.R`, que contienen procedimientos y análisis.
+
+### Salida (`output`)
+Aquí se guardan los datos procesados en `.csv`, `.sav`, `.dta`, además de tablas y figuras en `.png` o `.xlsx`.
+
+### ¿Qué es un archivo `.Rproj`?
+Es un archivo que configura un proyecto en RStudio, permitiendo gestionar la estructura y facilitar la reproducibilidad.
+
+## 3.- Descriptivos
+
+Para esta tarea se analizará ficticiamente las preferencias de algunos artistas chilenos por parte de los estudiantes de Sociología de tercer año.
+
+```{r, echo=FALSE}
+# Crear datos ficticios sobre artistas y géneros musicales
+datos_musica <- data.frame(
+  Artista = c("Francisca Valenzuela", "Kidd Voodoo", "Mon Laferte", "Pablo Chill-E", "Los Bunkers"),
+  Genero = c("Pop", "Trap", "Rock Alternativo", "Reggaetón", "Rock"),
+  Cantidad = c(7, 5, 6, 8, 4)  # Cantidad de estudiantes que prefieren cada artista
+)
+
+# Mostrar la tabla
+knitr::kable(datos_musica, caption = "Preferencias musicales entre estudiantes de Sociología")
+
+```
+
+### Análisis gráfico
+
+A continuación, se creará un simple gráfico que muestra la distribución de las preferencias de los estudiantes.
+
+```{r, echo=FALSE}
+library(ggplot2)
+
+ggplot(datos_musica, aes(x = Artista, y = Cantidad, fill = Genero)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  labs(title = "Preferencias musicales entre estudiantes",
+       x = "Artista",
+       y = "Cantidad de estudiantes") +
+  theme(legend.position = "none")  # Ocultar leyenda
+```
+
+###. Explicación
+
+Estos datos muestran las preferencias musicales de estudiantes por cinco artistas chilenos populares entre los estudiantes de Sociología de la UAH. Sobre lo mismo, se observa que Pablo Chill E y Francisca Valenzuela son los más populares. 
+
+
+
